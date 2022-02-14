@@ -47,7 +47,8 @@ Publish the website in the given URL.
   </div>
 </body>
 
-### app.component.css
+### app.component.css:
+```
 * {
     box-sizing:border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -115,9 +116,10 @@ export class AppComponent {
     <div class="formelement">
     Area=<input type="text" [value]="area"> Meters<sup>2</sup>
     </div>
+```
 
 ### Rectangle.component.css
-
+```
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -183,9 +185,9 @@ Height=<input type="text" [(ngModel)]="height"> Meters <br/>
 <div class="formelement">
 Volume=<input type="text" [value]="volume"> Meters<sup>3</sup>
 </div>
-
+```
 ### Cylinder.component.css
-
+```
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -226,10 +228,35 @@ export class CylinderComponent{
         this.volume = 3.14 * this.radius * this.radius * this.height ;
     }
 }
+```
+### app.module.ts:
+```
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { CylinderComponent } from './cylinder/cylinder.component';
+
+
+import { RectangleComponent } from './rectangle/rectangle.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,RectangleComponent,CylinderComponent
+  ],
+  imports: [
+    BrowserModule,FormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 ## OUTPUT:
 ![./output](./an.png)
 
-### Home Page:
+
 
 
 ## Result:
